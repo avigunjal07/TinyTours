@@ -46,37 +46,56 @@ function Login() {
   };
 
   return (
-    <div>
-        <Navbar />
-     
+  <div className="min-h-screen bg-blue-50">
+    <Navbar />
 
-      <div className="w-75 block mx-auto mt-10 p-8 ">
-        <Input
-          type="email"
-          placeholder="Email"
-          value={loginUser.email}
-          onChange={(e) =>
-            setLoginUser({ ...loginUser, email: e.target.value })
-          }
-        />
+    <div className="flex justify-center items-center mt-16 px-4">
+      <div className="w-full max-w-md bg-white shadow-lg rounded-2xl p-8 border border-blue-100">
 
-        <Input
-          type="password"
-          placeholder="Password"
-          value={loginUser.password}
-          onChange={(e) =>
-            setLoginUser({ ...loginUser, password: e.target.value })
-          }
-        />
+        <h2 className="text-2xl font-bold text-blue-600 text-center mb-6">
+          Login to TinyTours
+        </h2>
 
-        <Button title="Login" onClick={checkUserLogin} />
-        <Link to="/signup" className="my-2 block text-blue-500">
-          Don't have an account? Signup
-        </Link>
+        <div className="space-y-4">
+          <Input
+            type="email"
+            placeholder="Email"
+            value={loginUser.email}
+            onChange={(e) =>
+              setLoginUser({ ...loginUser, email: e.target.value })
+            }
+            className="w-full border border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
+
+          <Input
+            type="password"
+            placeholder="Password"
+            value={loginUser.password}
+            onChange={(e) =>
+              setLoginUser({ ...loginUser, password: e.target.value })
+            }
+            className="w-full border border-blue-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
+
+          <Button
+            title="Login"
+            onClick={checkUserLogin}
+            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 rounded-lg transition"
+          />
+        </div>
+
+        <p className="text-center mt-4 text-sm text-gray-600">
+          Don't have an account?{" "}
+          <Link to="/signup" className="text-blue-500 font-medium ">
+            Signup
+          </Link>
+        </p>
       </div>
-      <Toaster />
     </div>
-  );
+
+    <Toaster />
+  </div>
+);
 }
 
 export default Login;
