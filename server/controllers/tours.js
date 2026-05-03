@@ -72,7 +72,7 @@ const putTours = async (req, res) => {
     const { title, description, cities, startDate, endDate, photos } =
         req.body;
 
-    await Tour.updateone(
+    await Tour.updateOne(
         { _id: id },
         { title, description, cities, startDate, endDate, photos }
     );

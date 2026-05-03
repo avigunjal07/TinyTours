@@ -1,0 +1,25 @@
+http://localhost:5000/tours
+
+post:
+{
+  "title": "Goa Trip",
+  "description": "Beach vacation",
+  "cities": ["Goa"],
+  "startDate": "2026-06-01",
+  "endDate": "2026-06-05",
+  "photos": []
+}
+
+http://localhost:5000/api/auth/login
+{
+  "email": "avi@gmail.com",
+  "password": "123456"
+}
+
+http://localhost:5000/tours/69f7619e34fd21c4b52628cc
+put {
+  "title": "Goa Trip Updated",
+  "description": "Luxury beaches + nightlife + food tour",
+  "cities": ["Goa", "Mumbai"],
+  "photos": []
+}
