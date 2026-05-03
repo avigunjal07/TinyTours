@@ -35,15 +35,12 @@ function Dashboard() {
     <div className="min-h-screen bg-gray-100">
       <Navbar />
 
-      {/* Main Container */}
       <div className="max-w-6xl mx-auto px-4 mt-10">
 
-        {/* Heading */}
         <h1 className="text-3xl font-bold text-gray-800 mb-6">
           Your Tours
         </h1>
 
-        {/* Empty State */}
         {tours.length === 0 && (
           <div className="text-center text-gray-500 mt-20">
             <p className="text-xl">No tours available</p>
@@ -51,7 +48,6 @@ function Dashboard() {
           </div>
         )}
 
-        {/* Grid Layout */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {tours.map((tourItem, index) => {
             return (
@@ -63,7 +59,6 @@ function Dashboard() {
         </div>
       </div>
 
-      {/* Floating Add Button */}
       <Link to="/tours/new">
         <div className="fixed bottom-8 right-8 bg-blue-600 hover:bg-blue-700 p-4 rounded-full shadow-lg transition duration-300 cursor-pointer">
           <img
