@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Input from "../components/Input";
-import Buttons from "../components/Buttons";
+import Input from "../components/Input.jsx";
+import Buttons from "../components/Buttons.jsx";
 import toast, { Toaster } from "react-hot-toast";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar.jsx";
 
 function Contact() {
   const [form, setForm] = useState({
