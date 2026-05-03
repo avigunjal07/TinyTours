@@ -76,8 +76,7 @@ function Contact() {
         </h1>
 
         <div className="flex flex-col md:flex-row gap-10 w-full max-w-6xl">
-          
-          {/* LEFT FORM */}
+
           <div className="w-full max-w-2xl mx-auto p-6 shadow-xl rounded-xl bg-white border border-green-300">
             
             <p className="text-xl md:text-2xl text-center mb-5 font-semibold">
