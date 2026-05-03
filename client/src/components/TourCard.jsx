@@ -3,7 +3,6 @@ import Avatar from "./Avatar.jsx";
 import PhotoViewer from "./PhotoViewer.jsx";
 
 function TourCard({
-  _id,
   title,
   description,
   cities,
@@ -11,46 +10,50 @@ function TourCard({
   user,
   startDate,
   endDate,
-  createdAt,
-  updatedAt,
 }) {
   const { name, email } = user;
 
   return (
-    <div className="border border-gray-500 px-4 py-2 rounded-md shadow-md">
-      <h2 className="text-xl">{title}</h2>
-      <p className="text-xs text-gray-500">{description}</p>
-      <p className="my-2">
-        <Building2 className="inline-block mr-1" />{" "}
-        {cities.map((city) => {
-          return (
-            <span
-              key={city}
-              className="mr-2 text-sm bg-gray-300 px-4 py-0.5 rounded-full"
-            >
-              {city}
-            </span>
-          );
-        })}
-      </p>
+    <div className="bg-blue-100 border border-blue-200 rounded-xl p-4 space-y-3">
 
-      <p className="flex items-center my-2 text-sm">
-        <Footprints className="mx-2 h-6 w-6"/> Started on: {new Date(startDate).toLocaleDateString()}{" "}
-        and
-        <LandPlot  className="ml-4 mr-2 h-6 w-6"/>
-        Ended on: {new Date(endDate).toLocaleDateString()}
-      </p>
+      <h2 className="text-lg font-semibold text-black">{title}</h2>
 
-      <div className="flex items-center">
-        <span className="mr-2">Posted by:</span>{" "}
-        <Avatar name={name} size={"small"} /> <strong>{name}</strong> ({email})
+      <p className="text-sm text-black">{description}</p>
+
+      <div className="flex flex-wrap items-center gap-2 text-sm text-black">
+        <Building2 className="h-4 w-4" />
+        {cities.map((city) => (
+          <span key={city} className="px-3 py-1 bg-blue-200 rounded-full text-xs">
+            {city}
+          </span>
+        ))}
       </div>
 
-      <div className="flex">
-        {photos.map((photo, index) => {
-          return PhotoViewer({ imgUrl: photo, index });
-        })}
+      <div className="flex flex-col sm:flex-row gap-2 text-sm text-black">
+        <div className="flex items-center gap-2">
+          <Footprints className="h-4 w-4" />
+          <span>Start: {new Date(startDate).toLocaleDateString()}</span>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <LandPlot className="h-4 w-4" />
+          <span>End: {new Date(endDate).toLocaleDateString()}</span>
+        </div>
       </div>
+
+      <div className="flex items-center gap-2 text-sm text-black">
+        <span>Posted by:</span>
+        <Avatar name={name} size="small" />
+        <span>{name}</span>
+        <span>({email})</span>
+      </div>
+
+      <div className="flex gap-2 overflow-x-auto">
+        {photos.map((photo, index) => (
+          <PhotoViewer key={index} imgUrl={photo} index={index} />
+        ))}
+      </div>
+
     </div>
   );
 }
