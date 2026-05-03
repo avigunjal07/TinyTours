@@ -32,9 +32,8 @@ function Login() {
 
       const { jwtToken, data } = response.data;
 
-      // localStorage.setItem("token", jwtToken);
       localStorage.setItem("userJwtToken", jwtToken);
-      // localStorage.setItem("userJwtToken", response.data.token);
+
       localStorage.setItem("userData", JSON.stringify(data));
       
       setTimeout(() => {
@@ -51,7 +50,7 @@ function Login() {
         <Navbar />
      
 
-      <div className="w-75 block mx-auto mt-10">
+      <div className="w-75 block mx-auto mt-10 p-8 ">
         <Input
           type="email"
           placeholder="Email"
