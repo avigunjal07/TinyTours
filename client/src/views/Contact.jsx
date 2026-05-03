@@ -15,7 +15,6 @@ function Contact() {
   });
 
   useEffect(() => {
-    // ✅ Auto-fill user data if logged in
     const user = JSON.parse(localStorage.getItem("userData"));
 
     if (user) {
@@ -95,7 +94,6 @@ function Contact() {
               <Buttons title="Send Inquiry" onClick={sendMessage} />
             </div>
 
-            {/* WHY US */}
             <div className="mt-6 p-4 rounded-xl bg-slate-100 border">
               <p className="text-xl font-semibold mb-2">Why Travel With Us?</p>
               <p className="text-sm">✔ Affordable Packages</p>
@@ -104,7 +102,6 @@ function Contact() {
             </div>
           </div>
 
-          {/* RIGHT INFO */}
           <div className="w-full">
             <div className="rounded-2xl shadow-lg bg-white p-5 border border-green-300 text-center">
               <p className="text-2xl font-semibold mb-3">
