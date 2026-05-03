@@ -4,7 +4,7 @@ import { getUserData, logoutUser } from "../utils.jsx";
 import Button from "./Button";
 import { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
-import Avatar from "./Avatar";
+import Avatar from "./Avatar.jsx";
 
 
 function Navbar() { 
