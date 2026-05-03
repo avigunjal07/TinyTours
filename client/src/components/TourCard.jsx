@@ -1,5 +1,5 @@
 import { Building2, Footprints, LandPlot } from "lucide-react";
-import Avatar from "./Avatar.jsxr";
+import Avatar from "./Avatar.jsx";
 import PhotoViewer from "./PhotoViewer.jsx";
 
 function TourCard({
