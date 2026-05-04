@@ -1,17 +1,20 @@
 import { Building2, Footprints, LandPlot } from "lucide-react";
 import Avatar from "./Avatar.jsx";
 import PhotoViewer from "./PhotoViewer.jsx";
+import { useNavigate } from "react-router";
 
 function TourCard({
+  _id,
   title,
   description,
   cities,
-  photos,
+  photos=[],
   user,
   startDate,
   endDate,
 }) {
   const { name, email } = user;
+  const navigate = useNavigate();
 
   return (
     <div className="bg-blue-100 border border-blue-200 rounded-xl p-4 space-y-3">
@@ -49,10 +52,21 @@ function TourCard({
       </div>
 
       <div className="flex gap-2 overflow-x-auto">
-        {photos.map((photo, index) => (
-          <PhotoViewer key={index} imgUrl={photo} index={index} />
-        ))}
+        {photos?.length > 0 ? (
+  photos.map((photo, index) => (
+    <PhotoViewer key={index} imgUrl={photo} index={index} />
+  ))
+) : (
+  <p className="text-sm text-gray-500">No images uploaded</p>
+)}
       </div>
+      <button
+  onClick={() => navigate(`/tours/edit/${_id}`)}
+  className="bg-blue-500 text-white px-3 py-1 rounded mt-2"
+>
+  Edit Tour
+</button>
+      
 
     </div>
   );

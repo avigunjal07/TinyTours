@@ -23,7 +23,7 @@ root.render(
       <Route path="/signup" element={<Signup />} />
       <Route path="/tours" element={<Tours />} />
       <Route path="/tours/new" element={<NewTour />} />
-      <Route path="/tours/edit" element={<EditTour />} />
+      <Route path="/tours/edit/:id" element={<EditTour />} />
       <Route path="/contact" element={<Contact />} />
        <Route path="/recieved-contact" element={<ReceivedContact />} />
       

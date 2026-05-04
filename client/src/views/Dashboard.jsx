@@ -52,7 +52,7 @@ function Dashboard() {
           {tours.map((tourItem, index) => {
             return (
               <div className="bg-white rounded-2xl shadow-md hover:shadow-lg transition duration-300 p-2">
-                <TourCard key={index} {...tourItem} />
+                <TourCard key={tourItem._id} {...tourItem} />
               </div>
             );
           })}
