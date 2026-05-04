@@ -7,7 +7,7 @@ import authRoutes from "./routes/authRoutes.js";
 import { postSignup, postLogin } from "./controllers/auth.js";
 import { getHome, getHealth } from "./controllers/health.js";
 import { getTours, postTours, putTours } from "./controllers/tours.js";
-//import { postContact, getContact } from "./controllers/contact.js";
+import { postContact, getContact } from "./controllers/Contact.js";
 import { checkJWT } from "./middlewares/jwt.js";
 
 dotenv.config();
@@ -50,8 +50,8 @@ app.post("/tours", checkJWT, postTours);
 app.get("/tours", checkJWT, getTours);
 app.put("/tours/:id", checkJWT, putTours);
 
-// app.post("/api/contact", checkJWT, postContact);
-// app.get("/api/contact", checkJWT, getContact);
+app.post("/api/contact", checkJWT, postContact);
+app.get("/api/contact", checkJWT, getContact);
 
 app.get("/", (req, res) => {
   res.send("API Running...");
