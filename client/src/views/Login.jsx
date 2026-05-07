@@ -19,7 +19,7 @@ function Login() {
   });
 
   const checkUserLogin = async () => {
-    const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/login` , loginUser);
+    const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/auth/login` , loginUser);
 
     console.log(response.data);
 

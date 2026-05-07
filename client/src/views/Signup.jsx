@@ -24,7 +24,7 @@ function Signup() {
 
   const createUser = async () => {
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/signup`,
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/auth/signup`,
         newUser,
       );
 
