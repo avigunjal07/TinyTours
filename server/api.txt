@@ -17,6 +17,7 @@ http://localhost:5000/api/auth/login
 }
 
 https://tinytours-2.onrender.com/api/auth/signup
+POST
 {
   "name": "Rohit",
   "email": "rohit@gmail.com",

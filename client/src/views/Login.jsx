@@ -4,7 +4,6 @@ import Button from "../components/Button.jsx";
 import Input from "../components/Input.jsx";
 import axios from "axios";
 import Navbar from "../components/Navbar.jsx";
-
 import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router";
 
